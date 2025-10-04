@@ -13,6 +13,7 @@ source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_GI
 source("https://raw.githubusercontent.com/Analytikernatverket/hamta_data_playwright/main/hamta_ek_bistand_socialstyrelsen.R")
 
 if (!exists("args")) args <- commandArgs(trailingOnly = TRUE)
+if (length(args) == 1 && args == "inga_parametrar") args <- character(0)
 databas <- if (length(args) < 1) "oppna_data" else args[1]             # sparar data till databasen "oppna_data" om inte användaren skickar med ett annat databasnamn som argument till skriptet, i så fall används det istället
 schema_db <- if (length(args) < 2) "socialstyrelsen" else args[2]      # sparar till schema "socialstyrelsen" om det inte finns ett andra argument medskickat
 tabell_db <- if (length(args) < 3) "ek_bistand_hushall" else args[3]   # sparar till schema "ek_bistand_hushall" om det inte finns ett tredje argument medskickat
