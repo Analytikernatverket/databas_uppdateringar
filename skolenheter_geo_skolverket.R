@@ -8,7 +8,7 @@
 # Skapat av: Peter Möller, Region Dalarna
 
 source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_GIS.R", encoding = "utf-8", echo = FALSE)
-source("https://raw.githubusercontent.com/Analytikernatverket/hamta_data/main/skolenheter_api_skolverket.R")
+source("https://raw.githubusercontent.com/Analytikernatverket/hamta_data/main/skolenheter_api_geo_skolverket.R")
 
 if (!exists("args")) args <- commandArgs(trailingOnly = TRUE)
 if (length(args) == 1 && args == "inga_parametrar") args <- character(0)      # ett sätt att hantera parametrar på olika nivåer
