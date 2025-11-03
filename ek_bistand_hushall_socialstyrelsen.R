@@ -20,7 +20,7 @@ tabell_db <- if (length(args) < 3) "ek_bistand_hushall" else args[3]   # sparar 
 
 ek_bistand <- hamta_ek_bistand_socialstyrelsen()
 
-postgres_databas_uppdatera_med_metadata(
+postgres_databas_skriv_med_metadata(
   con = uppkoppling_adm(databas),
   inlas_df = ek_bistand,
   schema = schema_db,
