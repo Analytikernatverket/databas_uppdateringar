@@ -46,7 +46,7 @@ inuti_sverige_sf <- laddstolpar_sf %>%
 bearbetad_sf <- inuti_sverige_sf %>% 
   bind_rows(utanfor_sverige_sf)
 
-postgis_databas_uppdatera_med_metadata(con = uppkoppling_adm(databas),
+postgis_databas_skriv_med_metadata(con = uppkoppling_adm(databas),
                               inlas_sf = bearbetad_sf,
                               schema = schema_db,
                               tabell = tabell_db,
