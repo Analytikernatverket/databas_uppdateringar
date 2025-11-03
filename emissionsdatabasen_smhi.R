@@ -20,7 +20,7 @@ tabell_db <- if (length(args) < 3) "emissionsdata" else args[3]   # sparar till 
 
 emissionsdata <- hamta_nationella_emissionsdatabasen()
 
-postgres_databas_uppdatera_med_metadata(
+postgres_databas_skriv_med_metadata(
   con = uppkoppling_adm(databas),
   inlas_df = emissionsdata,
   schema = schema_db,
