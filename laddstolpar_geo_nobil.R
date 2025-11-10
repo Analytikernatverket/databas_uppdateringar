@@ -12,7 +12,7 @@ p_load(tidyverse,
        sf)
 
 source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_GIS.R", encoding = "utf-8", echo = FALSE)
-source("https://raw.githubusercontent.com/Analytikernatverket/hamta_data/refs/heads/main/laddstatioiner_api_geo_nobil.R")
+source("https://raw.githubusercontent.com/Analytikernatverket/hamta_data/refs/heads/main/laddstationer_api_geo_nobil.R")
 
 if (!exists("args")) args <- commandArgs(trailingOnly = TRUE)
 if (length(args) == 1 && args == "inga_parametrar") args <- character(0)      # ett sätt att hantera parametrar på olika nivåer
