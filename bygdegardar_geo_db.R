@@ -16,11 +16,11 @@ p_load(tidyverse,
 source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_GIS.R", encoding = "utf-8", echo = FALSE)
 source("https://raw.githubusercontent.com/Analytikernatverket/hamta_data/main/bygdegardar_geo.R")
 
-if (!exists("args")) args <- commandArgs(trailingOnly = TRUE)
-if (length(args) == 1 && args == "inga_parametrar") args <- character(0)      # ett sätt att hantera parametrar på olika nivåer
-databas <- if (length(args) < 1) "geodata" else args[1]             # sparar data till databasen "oppna_data" om inte användaren skickar med ett annat databasnamn som argument till skriptet, i så fall används det istället
-schema_db <- if (length(args) < 2) "malpunkter" else args[2]      # sparar till schema "socialstyrelsen" om det inte finns ett andra argument medskickat
-tabell_db <- if (length(args) < 3) "bygdegardar" else args[3]   # sparar till schema "ek_bistand_hushall" om det inte finns ett tredje argument medskickat
+if (!exists("argv", inherits = FALSE)) argv <- commandArgs(trailingOnly = TRUE)
+if (length(argv) == 1 && argv == "inga_parametrar") argv <- character(0)      # ett sätt att hantera parametrar på olika nivåer
+databas <- if (length(argv) < 1) "geodata" else argv[1]             # sparar data till databasen "oppna_data" om inte användaren skickar med ett annat databasnamn som argument till skriptet, i så fall används det istället
+schema_db <- if (length(argv) < 2) "malpunkter" else argv[2]      # sparar till schema "socialstyrelsen" om det inte finns ett andra argument medskickat
+tabell_db <- if (length(argv) < 3) "bygdegardar" else argv[3]   # sparar till schema "ek_bistand_hushall" om det inte finns ett tredje argument medskickat
 
 
 bygdegardar_sf <- skriptrader_upprepa_om_fel({
