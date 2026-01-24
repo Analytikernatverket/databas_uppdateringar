@@ -1,8 +1,8 @@
-# Skript som hämtar data från socialstyrelsen och laddar in i en databas, default är databasen "oppna_data", schemat
-# "socialstyrelsen" och tabellen "ek_bistand_hushall". Vill man ha andra namn så kan de skickas med som parameter
-# 1, 2 respektive 3 för databas, schema och tabell. Alltså tex: "Rscript.exe ek_bistand_hushall_socialstyrelsen.R databasnamn schemanamn tabellnamn"
+# Skript som hämtar data från Tillväxtverket och laddar in i en databas, default är databasen "oppna_data", schemat
+# "tillvaxtverket" och tabellen "gastnatter_hemland_lan". Vill man ha andra namn så kan de skickas med som parameter
+# 1, 2 respektive 3 för databas, schema och tabell. Alltså tex: "Rscript.exe gastnatter_utlandska_lan_tillvaxtverket.R databasnamn schemanamn tabellnamn"
 # 
-# För att kunna hämta data från Socialstyrelsen måste man ha Python installerat på datorn med Playwright-biblioteket.
+# För att kunna hämta data från Tillväxtverket måste man ha Python installerat på datorn med Playwright-biblioteket.
 #
 # Skriptet sparar datasetet till en postgres-databas, uppkopplingen görs med uppkoppling_adm(), där inloggningsuppgifter
 # till databasen (med skrivrättigheter) läggs in med keyringpaketet med service-namnet "databas_adm"
