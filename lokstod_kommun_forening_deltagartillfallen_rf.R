@@ -10,7 +10,7 @@
 source("https://raw.githubusercontent.com/Region-Dalarna/funktioner/main/func_GIS.R", encoding = "utf-8", echo = FALSE)
 source("https://raw.githubusercontent.com/Analytikernatverket/hamta_data/main/lokstod_kommun_forening_deltagare_aktiviteter.R")
 
-script_args <- commandArgs(trailingOnly = TRUE)
+script_args <- if (exists("argv", inherits = FALSE) && is.character(argv)) argv else commandArgs(trailingOnly = TRUE)
 if (length(script_args) == 1 && identical(script_args, "inga_parametrar")) script_args <- character(0)      # ett sätt att hantera parametrar på olika nivåer
 databas   <- if (length(script_args) < 1) "oppna_data"    else script_args[1]             # sparar data till databasen "oppna_data" om inte användaren skickar med ett annat databasnamn som argument till skriptet, i så fall används det istället
 schema_db <- if (length(script_args) < 2) "rf"            else script_args[2]                   # sparar till schema "rf" om det inte finns ett andra argument medskickat
